@@ -53,18 +53,13 @@ import matplotlib.pyplot as plt  # For plotting
 
 X = torch.linspace(1,70,70).reshape(-1,1)
 
-#torch.manual_seed(42)  # Ensures the same random numbers every time
-#X = torch.rand(100, 1) * 100  # 100 random values (0 to 100)
-#y = X * 2 + 1 + torch.randn(100, 1) * 10  # True function: y = 2x + noise
-
 torch.manual_seed(71) # to obtain reproducible results
 e = torch.randint(-8,9,(70,1),dtype=torch.float)
-#print(e.sum())
 
 y = 2*X + 1 + e
 print(y.shape)
 
-plt.scatter(X.numpy(), y.numpy(),color='red')  # Scatter plot of data points
+plt.scatter(X.numpy(), y.numpy(),color='red') 
 plt.xlabel('x')
 plt.ylabel('y')
 plt.title('Generated Data for Linear Regression')
